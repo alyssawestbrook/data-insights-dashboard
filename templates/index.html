@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Insights Dashboard</title>
+</head>
+<body>
+    <h1>Upload Your CSV Dataset</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if stats %}
+        <h2>Summary Statistics</h2>
+        {{ stats|safe }}
+    {% endif %}
+
+    {% if chart_path %}
+        <h2>Chart</h2>
+        <img src="{{ chart_path }}" alt="Chart">
+    {% endif %}
+</body>
+</html>
